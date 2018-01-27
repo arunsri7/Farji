@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import NewsItem
+from .models import FakeNewsItem
 
-class NewsItemSerializer(serializers.HyperlinkedModelSerializer):
+class ReportSerializer(serializers.ModelSerializer):
 	class Meta:
-		model = NewsItem
-		fields = ('id', 'title', 'author', 'content', 'source')
+		model = FakeNewsItem
+		fields = '__all__'

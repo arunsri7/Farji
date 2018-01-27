@@ -3,6 +3,6 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from .models import NewsItem
+from .models import FakeNewsItem
 
-admin.site.register(NewsItem)
+admin.site.register(FakeNewsItem)
