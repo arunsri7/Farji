@@ -5,3 +5,5 @@ class ReportSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = FakeNewsItem
 		fields = '__all__'
+
+# class ValidationSerializer(serializers.Serializer):
