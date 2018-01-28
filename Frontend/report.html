@@ -1,35 +1,61 @@
-<html>
-<head>
-    <title>Report</title>
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-        <!-- Custom Fonts -->
-        <link href="ve
-    ndor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-        <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-    
-        <!-- Custom CSS -->
-        <link href="css/stylish-portfolio.min.css" rel="stylesheet">
-</head>
-</head>
-<style>
-.text_area{
-background: transparent;
-margin: 23%;    
-}
-body{
-background-image: url(img/bg-callout.jpg);
+    <title>Carousel Template for Bootstrap</title>
 
-}
-</style>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
 
-<body>
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
 
-<textarea class="text_area" rows="10" cols="70">
-At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
-</textarea>
-<a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Farji API</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="http://10.5.61.44:8000/docs/">Docs</a></li>
+            <li><a href="/play.html">Playground</a></li>
+            <li><a href="/report.html">Report fake news</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-</body>
+    <div class="form col-md-6 col-md-offset-3">
+    	<input class="form-control inp" type="text" id="news-title" placeholder="Title" />
+    	<input class="form-control inp" type="text" id="news-desc" placeholder="text" />
+    	<input class="form-control inp" type="text" id="news-source" placeholder="source name" />
+    	<input class="form-control inp" type="text" id="news-url" placeholder="source url" />
+    	<button class="btn btn-primary" onclick="clearAll()">Submit</button>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/play.js"></script>
+  </body>
 </html>

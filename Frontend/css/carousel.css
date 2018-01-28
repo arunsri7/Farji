@@ -155,7 +155,7 @@ footer{
 }
 
 .validate{
-  margin-top: 20px;
+  /*margin-top: 20px;*/
   border-right: #000;
   border-right-width: 2px;
   border-right-style: dotted;
@@ -163,4 +163,12 @@ footer{
 
 .vresult{
   height: 100%;
+}
+
+.list-group-item{
+  margin: 11px 0px 11px 0px;
+}
+
+.inp{
+  margin: 4px;
 }
