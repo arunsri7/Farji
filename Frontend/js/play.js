@@ -1,4 +1,4 @@
-let baseURL = "http://127.0.0.1:8000/api";
+let baseURL = "http://10.5.61.44:8000/api";
 let validateURL = baseURL + "/validate-news/";
 let fakeURL = baseURL + "/fake-news/";
 let reportURL = baseURL + "/report-news/";
