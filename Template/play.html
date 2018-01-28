@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Carousel Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Farji API</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">Docs</a></li>
+            <li><a href="#contact">Playground</a></li>
+            <li><a href="#contact">Report fake news</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container validate col-xs-6">
+      <h3 class="text-center">Validate News</h3>
+      <div class="row">
+        <div class="col-lg-8">
+          <textarea id="snip" class="form-control" placeholder="Enter news snippet"></textarea>
+        </div>
+        <div class="col-lg-2">
+          <button class="btn btn-info pull-right" onclick="validateNews()">Validate</button>
+        </div>
+      </div>
+      <div class="row col-lg-12 vresult">
+        
+      </div>
+    </div>
+
+    <div class="container col-xs-6">
+      <h3 class="text-center">Breaking Fake news</h3>
+    </div>
+
+      <!-- FOOTER -->
+<!--     <footer class="col-lg-12">
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2018 Farji &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer> -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/play.js"></script>
+  </body>
+</html>
