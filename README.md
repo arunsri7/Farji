@@ -1,7 +1,7 @@
 
 ### Project summary:
-  
-      फrji, is a RESTful service aimed at reducing the circulation of fake news. We decided to make a RESTful service instead of a regular application because, fake news is being spread on platforms which are already being used by consumers. Creating another such platform will not have as big an impact. But, on the other hand, a RESTful service can be used by existing as well as future social platforms. Also, since this is a developer tool, the fake news will be filtered before reaching the end-users.
+
+फrji, is a RESTful service aimed at reducing the circulation of fake news. We decided to make a RESTful service instead of a regular application because, fake news is being spread on platforms which are already being used by consumers. Creating another such platform will not have as big an impact. But, on the other hand, a RESTful service can be used by existing as well as future social platforms. Also, since this is a developer tool, the fake news will be filtered before reaching the end-users.
 
 We have devised our own algorithm which assigns a score (percentage) to any given snippet of news. The criteria used in this scoring involves ‘number of occurrences of the snippet’, ‘time of publication’, ‘quality of the websites it occurs on’ and ‘manually flagging fake news’.  This ‘score’ along with remarks and other data are sent as response in json format. The developers who use this service can modify their views based on the score or the remarks. 
 
