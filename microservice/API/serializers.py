@@ -4,6 +4,6 @@ from .models import FakeNewsItem
 class ReportSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = FakeNewsItem
-		fields = '__all__'
+		fields = ('title', 'newsText', 'sourceName', 'sourceURL')
 
 # class ValidationSerializer(serializers.Serializer):

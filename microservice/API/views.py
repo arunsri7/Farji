@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from django.http import JsonResponse
 
 from .models import FakeNewsItem
 from .serializers import ReportSerializer
@@ -10,7 +11,7 @@ from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView
 
 from newsapi import NewsApiClient
 
@@ -27,31 +28,65 @@ def NewsItems(request):
 
     if request.method == 'POST':
         try:
-            payload = request.POST['newsText'].replace(".", "").replace(" ", ", ")
+            payload = request.POST['newsText'].replace(r'^a-zA-Z\d\s', "").replace(" ", ", ")
             
             items = newsapi.get_everything(
-            	q=payload,
-            	sources=publishers
+                q=payload[:20],
+                sources=publishers
             )
 
-            aScore = (items['totalResults']/(publishers.count(",")+1))*100
-            sources = [{
-            	"name": item["source"]["name"], 
-            	"url": item["url"],
-            	"description": item["description"]
-            } for item in items["articles"]]
+            aScore = (items['totalResults']/(publishers.count(",")+1))*100 
+            if aScore > 100:
+                aScore = 100
+
+            if(len(items) < 1):
+                sources = [{
+                    "name": "", 
+                    "url": "",
+                    "description": "",
+                    "title": ""
+                }]
+            else:
+                sources = [{
+                    "name": item["source"]["name"], 
+                    "url": item["url"],
+                    "description": item["description"],
+                    "title": item["title"]
+                } for item in items["articles"]]
 
             return Response({
-            	"no_of_sources": items['totalResults'],
-            	"aScore": aScore,
-            	"newsText": request.POST['newsText'],
-            	"sources": sources,
-            	"status": 200
+                "no_of_sources": items['totalResults'],
+                "aScore": aScore,
+                "newsText": request.POST['newsText'],
+                "sources": sources,
+                "status": 200
             })
         except KeyError:
             return Response({"errorMessage": "required parameters are not met", "post": request.POST})
     return Response({"errorMessage": "Wrong request is being used"})
 
+
 class ReportNews(CreateAPIView):
     queryset = FakeNewsItem.objects.all()
     serializer_class = ReportSerializer
+
+
+class GetFakeNews(ListAPIView):
+    queryset = FakeNewsItem.objects.all()
+    serializer_class = ReportSerializer
+
+def getFakeNews(req):
+    items = FakeNewsItem.objects.all()
+    return JsonResponse({})
+
+# @api_view(['GET'])
+# def getFakeNews(request):
+#     """Returns a list of all the reported fake news"""
+#     if request.method == 'GET':
+#         items = FakeNewsItem.objects.all()
+#         return Response({
+#             "total_news_items": len(items),
+#             "result": list(items),
+#             "status": 200
+#         })
+#     return Response({"errorMessage": "Wrong request is being used"})
